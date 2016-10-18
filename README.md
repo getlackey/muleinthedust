@@ -1,5 +1,8 @@
 # Mule in the Dust
 
+![](https://travis-ci.org/getlackey/muleinthedust.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/getlackey/muleinthedust/badge.svg?branch=master)](https://coveralls.io/github/getlackey/muleinthedust?branch=master)
+
 > It's Lackey implementation for DustJS as Express renderer.
 
 We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it doesn't fully match our case. We decided to develop our own solution.
