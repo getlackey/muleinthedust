@@ -4,6 +4,74 @@
 
 We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it doesn't fully match our case. We decided to develop our own solution.
 
+## Helpers
+
+### @for
+
+```dustjs
+{@for from=0 to=10}
+    {$idx}
+{/for}
+```
+
+### @has
+
+```dustjs
+{@has path="title"}
+    {title}
+{:else}
+    Not title here
+{/has}
+```
+
+### @path
+
+```dustjs
+{@path path="items.{$idx}"}
+    {title}
+{/path}
+```
+
+### @block
+
+```dustjs
+{@block path="items.0"/}
+{@block path="items.0" template="_partials/item"/}
+{@block route="/referred/page"/}
+{@block route="/referred/page" template="_partials/as_facebook"/}
+```
+
+### @list
+
+```dustjs
+{@list path="items"/}
+{@list path="items" template="_partials/as_facebook"/}
+```
+
+### @variant
+
+```dustjs
+{@variant path="items.1" locale="pl"}
+    {title}
+{/variant}
+```
+
+### @editable
+
+Extendable
+
+```dustjs
+{@editable path="items.1.title" editMode=edit/}
+```
+
+### @media
+
+Extendable
+
+```dustjs
+{@media path="items.1.image}" editMode=edit data-class="thumb"/}
+```
+
 ## POM 2.0
 
 ### POMObject
