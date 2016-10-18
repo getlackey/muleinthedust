@@ -40,7 +40,7 @@ gulp.task('lint', () => {
         .pipe(eslint.format());
 });
 
-gulp.task('pre-test', ['pre-test:clean'], function () {
+gulp.task('pre-test', function () {
     return gulp
         .src('lib/**/*.js')
         .pipe(istanbul({

@@ -4,6 +4,7 @@
 const
     should = require('should'),
     library = require('../lib'),
+    fs = require('fs'),
     instance = library({
         root: __dirname + '/mockups',
         onRoute: (route) => Promise.resolve({
@@ -15,42 +16,31 @@ const
             template: 'block2'
         })
     }),
-    ctx = {
-        top: 'up',
-        item: {
-            inner: 'it is',
-            in : {
-                the: {
-                    list: [{
-                        name: 'A'
-                        }, {
-                        name: 'B',
-                        $idx: 1000
-                        }, {
-                        name: 'C'
-                        }, {
-                        name: 'D'
-                        }, null, {
-                        name: 'F'
-                        }]
-                }
-            }
-        },
-        block: [{
-            name: 'A',
-            template: '_partials/block'
-        }, {
-            name: 'B'
-        }, {
-            name: 'C'
-        }, {
-            name: 'D'
-        }, {
-            name: 'E'
-        }]
-    };
+    ctx = require('./context.json');
+
+function resultMockup(name) {
+    return fs.readFileSync(__dirname + '/mockups/' + name + '.test.html', 'utf8').replace(/^\s+|\s+$/g, '');
+}
 
 describe('Helpers', () => {
+
+    it('@for', done => {
+        instance('for', {
+            A: 'King Kong'
+        }, (error, result) => {
+            if (error) {
+                return done(error);
+            }
+            try {
+                result.should.be.String;
+                result.replace(/^\s+|\s+$/g, '').should.be.eql('3 - King Kong4 - King Kong5 - King Kong');
+                done();
+            } catch (err) {
+                done(err);
+            }
+
+        });
+    });
 
     it('@path', done => {
         instance('path', ctx, (error, result) => {
@@ -59,37 +49,7 @@ describe('Helpers', () => {
             }
             try {
                 result.should.be.String;
-                result.replace(/^\s+|\s+$/g, '').should.be.eql(`TOP
-up
-ITEM INNER
-it is
-ITEM IN THE LIST 4
-A
-ITEM IN THE LIST 5
-F
-FOR
-FOR 0
- A
-FOR 1
-1000 B
-FOR 2
- C
-FOR 3
- D
-FOR 4
- not found
-FOR 5
- F
-FOR 6
- not found
-FOR 7
- not found
-FOR 8
- not found
-FOR 9
- not found
-FOR 10
- not found`);
+                result.replace(/^\s+|\s+$/g, '').should.be.eql(resultMockup('path'));
                 done();
             } catch (err) {
                 done(err);
@@ -104,7 +64,7 @@ FOR 10
             }
             try {
                 result.should.be.String;
-                result.replace(/\s+/g, '').should.be.eql('TOP[objectObject]ITEMINNER[objectObject]ITEMINTHELIST4ITEMINTHELIST5FORFOR00FOR11FOR22FOR33FOR44notfoundFOR55FOR66notfoundFOR77notfoundFOR88notfoundFOR99notfoundFOR1010notfound');
+                result.replace(/\s+/g, '').should.be.eql(resultMockup('has'));
                 done();
             } catch (err) {
                 done(err);
@@ -119,7 +79,7 @@ FOR 10
             }
             try {
                 result.should.be.String;
-                result.replace(/^\s+|\s+$/g, '').should.be.eql('<block>A</block><!-- No template defined --><block2>block2 name</block2><block2>D</block2>');
+                result.replace(/^\s+|\s+$/g, '').should.be.eql(resultMockup('block'));
                 done();
             } catch (err) {
                 done(err);

@@ -1,0 +1,34 @@
+{
+    "top": "up",
+    "item": {
+        "inner": "it is",
+        "in": {
+            "the": {
+                "list": [{
+                    "name": "A"
+                        }, {
+                    "name": "B",
+                    "$idx": 1000
+                        }, {
+                    "name": "C"
+                        }, {
+                    "name": "D"
+                        }, null, {
+                    "name": "F"
+                }]
+            }
+        }
+    },
+    "block": [{
+        "name": "A",
+        "template": "_partials/block"
+        }, {
+        "name": "B"
+        }, {
+        "name": "C"
+        }, {
+        "name": "D"
+        }, {
+        "name": "E"
+    }]
+}
