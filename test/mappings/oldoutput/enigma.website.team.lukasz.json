@@ -1,0 +1,431 @@
+{
+    "data": {
+        "route": "http://enigma-marketing.co.uk/team/%c5%82ukasz-sielski",
+        "content": {
+            "id": 40,
+            "$uri": "/api/cms/content/40",
+            "type": "page",
+            "name": null,
+            "route": "/team/łukasz-sielski",
+            "createdAt": "2016-04-26T10:13:43.164Z",
+            "publishAt": "2016-08-22T00:00:00.000Z",
+            "props": {
+                "title": "",
+                "theme": "orange",
+                "custom": "",
+                "header-type": "article",
+                "header-gradient": "",
+                "header-tags-theme": "",
+                "header-figure-size": "",
+                "header-figure-x-offset": "",
+                "header-figure-y-offset": "",
+                "og_title": null,
+                "og_url": "https://enigma-marketing.co.uk//team/łukasz-sielski"
+            },
+            "author": {
+                "id": 3,
+                "name": "Łukasz Sielski",
+                "image": {
+                    "id": 260,
+                    "$uri": "/api/media/260",
+                    "name": "team/lukasz-sielski/lukasz-sielski-tile.jpg",
+                    "source": "img/core/uploads/team/lukasz-sielski/lukasz-sielski-tile.jpg",
+                    "alternatives": [],
+                    "mime": "image/jpeg",
+                    "type": "image",
+                    "createdAt": "2016-04-28T15:34:03.158Z",
+                    "attributes": {},
+                    "taxonomies": []
+                }
+            },
+            "template": {
+                "id": 4,
+                "name": "Dynamic Template",
+                "path": "~/core/dynamic",
+                "type": "template",
+                "javascripts": null,
+                "stylesheets": null,
+                "props": {
+                    "header-figure-size": "number",
+                    "header-figure-x-offset": "number",
+                    "header-figure-y-offset": "number",
+                    "header-gradient": [{
+                        "value": "green"
+                    }, {
+                        "value": "yellow"
+                    }, {
+                        "value": "pink"
+                    }, {
+                        "value": "purple"
+                    }, {
+                        "value": "blue"
+                    }, {
+                        "value": "orange"
+                    }, {
+                        "value": "red"
+                    }, {
+                        "value": "orange-yellow",
+                        "label": "orange to yellow"
+                    }, {
+                        "value": "blue-green",
+                        "label": "blue to green"
+                    }, {
+                        "value": "purple-pink",
+                        "lable": "purple to pink"
+                    }, {
+                        "value": "purple-blue",
+                        "label": "purple to blue"
+                    }],
+                    "header-tags-theme": [{
+                        "value": "green"
+                    }, {
+                        "value": "yellow"
+                    }, {
+                        "value": "pink"
+                    }, {
+                        "value": "purple"
+                    }, {
+                        "value": "blue"
+                    }, {
+                        "value": "orange"
+                    }, {
+                        "value": "red"
+                    }],
+                    "header-type": ["article", "filterable", "introduction", "standard"],
+                    "theme": ["green", "green-inverted", "yellow", "yellow-inverted", "pink", "pink-inverted", "purple", "purple-inverted", "blue", "blue-inverted", "orange", "orange-inverted", "red", "red-inverted"],
+                    "tile-theme": ["green", "green-inverted", "green-picture", "yellow", "yellow-inverted", "yellow-picture", "pink", "pink-inverted", "pink-picture", "purple", "purple-inverted", "purple-picture", "blue", "blue-inverted", "blue-picture", "orange", "orange-inverted", "orange-picture", "red", "red-inverted", "red-picture"],
+                    "title": "string",
+                    "og_title": {
+                        "label": "Title (used in OpenGraph)",
+                        "name": "og_title"
+                    },
+                    "og_type": {
+                        "label": "Type (used in OpenGraph)",
+                        "name": "og_type"
+                    },
+                    "og_description": {
+                        "label": "Description (used in OpenGraph)",
+                        "name": "og_description"
+                    },
+                    "og_image": {
+                        "label": "Image (used in OpenGraph)",
+                        "name": "og_image",
+                        "type": "media"
+                    }
+                },
+                "selectable": true,
+                "populate": [{
+                    "field": "related",
+                    "type": "Content",
+                    "excludeTaxonomy": [{
+                        "type": "pageType",
+                        "value": "hub-page"
+                    }],
+                    "taxonomy": [{
+                        "type": "pageType",
+                        "source": "content",
+                        "ifNot": {
+                            "type": "pageType",
+                            "value": "team"
+                        }
+                    }, {
+                        "type": "areaType",
+                        "source": "content",
+                        "if": {
+                            "type": "pageType",
+                            "value": "work"
+                        }
+                    }, {
+                        "type": "pageType",
+                        "value": "blog-post",
+                        "if": {
+                            "type": "pageType",
+                            "value": "team"
+                        }
+                    }],
+                    "author": {
+                        "if": {
+                            "type": "pageType",
+                            "value": "team"
+                        }
+                    },
+                    "excludeContentId": true,
+                    "limit": 5,
+                    "order": {
+                        "createdAt": "DESC"
+                    }
+                }],
+                "expose": [{
+                    "path": "layout.heading",
+                    "label": "Title",
+                    "type": "text"
+                }, {
+                    "path": "layout.subtitle",
+                    "label": "Subtitle",
+                    "type": "text"
+                }, {
+                    "path": "layout.heading-image",
+                    "label": "Heading Image",
+                    "type": "media"
+                }, {
+                    "path": "layout.blocks",
+                    "label": "Content",
+                    "type": "List"
+                }],
+                "thumb": "/img/core/templates/dynamic.jpg",
+                "prefix": "",
+                "variants": [{
+                    "id": 30,
+                    "name": "Work half width",
+                    "path": "~/core/partials/variants/work-half",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }, {
+                    "id": 31,
+                    "name": "Work full width",
+                    "path": "~/core/partials/variants/work-wide",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }, {
+                    "id": 32,
+                    "name": "Work variant",
+                    "path": "~/core/partials/variants/case-study-hero",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }, {
+                    "id": 35,
+                    "name": "Person",
+                    "path": "~/core/partials/variants/person",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }, {
+                    "id": 36,
+                    "name": "Solution",
+                    "path": "~/core/partials/variants/solution",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }, {
+                    "id": 37,
+                    "name": "Hub item (edit)",
+                    "path": "~/core/partials/variants/hub-item-edit",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }, {
+                    "id": 38,
+                    "name": "Related item",
+                    "path": "~/core/partials/variants/related-content-edit",
+                    "type": "variant",
+                    "javascripts": null,
+                    "stylesheets": null,
+                    "props": {},
+                    "selectable": false,
+                    "populate": [],
+                    "expose": [],
+                    "thumb": null,
+                    "prefix": "",
+                    "variants": [],
+                    "require": [],
+                    "taxonomies": [],
+                    "allowTaxonomies": []
+                }],
+                "require": [],
+                "taxonomies": [],
+                "allowTaxonomies": [{
+                    "id": 5,
+                    "name": "pageType",
+                    "label": "Page Type",
+                    "restrictive": null,
+                    "description": null,
+                    "allowCreation": null
+                }, {
+                    "id": 6,
+                    "name": "areaType",
+                    "label": "Work Area",
+                    "restrictive": null,
+                    "description": null,
+                    "allowCreation": true
+                }, {
+                    "id": 7,
+                    "name": "requireRole",
+                    "label": "Require Role",
+                    "restrictive": true,
+                    "description": null,
+                    "allowCreation": null
+                }]
+            },
+            "state": "published",
+            "layout": {
+                "type": "Fields",
+                "name": "Łukasz Sielski",
+                "title": "Senior Full Stack Developer",
+                "headshot": {
+                    "*": {
+                        "type": "Media",
+                        "id": 193
+                    },
+                    "type": "Variants",
+                    "small:*:*": {
+                        "id": 260,
+                        "type": "Media"
+                    }
+                },
+                "blocks": {
+                    "type": "List",
+                    "items": [{
+                        "type": "Block",
+                        "fields": {
+                            "image": {
+                                "type": "Variants",
+                                "hero:*:*": {
+                                    "id": 259,
+                                    "type": "Media"
+                                }
+                            },
+                            "excerpt": {
+                                "type": "Variants",
+                                "hero:*:*": "“Do or do not, there is no try” is my life theme. Passionate about R&D, reverse engineering, early adoption and prototyping. I speak Polish, Russian and English, but can pick up German, Ukrainian or Belarusian as well. I love history and totally random facts and would play bass, sail or cycle, if only I had more time.",
+                                "hero:*:pl": "“Rób, albo nie rób, nie ma próbowania” jest jego życiowym hasłem. Pasjonat R&D, odwróconej inżynierii, wczesnej adaptacji i protypowania. Pracował dla Time Inc., Nokia, Wayn.com i wielu innych. Mówi po polsku, rosyjsku i angielsku, ale podchwyci także niemiecki, ukraiński czy białoruski. Kocha historię i całkowicie losowe fakty. Gdyby miał więcej czasu grałby na base, żeglował i jeździł na rowerze. Znany także z wrzucania losowych i nieoczekiwanych odniesień do Tolkiena czy Monty Pythona."
+                            },
+                            "title": {
+                                "type": "Variants",
+                                "hero:*:*": "Łukasz's Bio",
+                                "hero:*:pl": "O Łukaszu"
+                            }
+                        },
+                        "template": "~/core/partials/block/media-copy-hero",
+                        "props": {
+                            "theme": "orange"
+                        }
+                    }, {
+                        "type": "Block",
+                        "fields": {
+                            "text": {
+                                "type": "Variants",
+                                "quote:*:*": "\" Difference between someone who keeps failing and one who \"knows better\", is that the first one can succeed at some point and the second will remain stupid. \"",
+                                "quote:*:pl": "\" Różnica pomiędzy kimś kto wciąż ponosi porażki, a tego kto \"wie lepiej\" polega na tym, iż pierwszy w końcu może odnieść sukces, a drugi zawsze pozostanie głupim. \""
+                            }
+                        },
+                        "template": "~/core/partials/block/quote",
+                        "props": {}
+                    }]
+                },
+                "related": {
+                    "0": null
+                },
+                "heading": "Łukasz Marek Sielski",
+                "subtitle": "Senior full stack developer",
+                "tags": " ",
+                "heading-image": {
+                    "type": "Variants",
+                    "*:*:pl": null
+                }
+            },
+            "taxonomies": [{
+                "id": 3,
+                "name": "team",
+                "label": "Team",
+                "type": {
+                    "id": 5,
+                    "name": "pageType",
+                    "label": "Page Type",
+                    "restrictive": null,
+                    "description": null,
+                    "allowCreation": null
+                }
+            }]
+        },
+        "related": []
+    },
+    "template": "~/core/dynamic",
+    "title": "",
+    "theme": "orange",
+    "custom": "",
+    "header-type": "article",
+    "header-gradient": "",
+    "header-tags-theme": "",
+    "header-figure-size": "",
+    "header-figure-x-offset": "",
+    "header-figure-y-offset": "",
+    "og_title": null,
+    "og_url": "https://enigma-marketing.co.uk//team/łukasz-sielski",
+    "stylesheets": [],
+    "javascripts": [],
+    "edit": false,
+    "fragment": false,
+    "locale": "en",
+    "host": "https://enigma-marketing.co.uk/",
+    "env": "production",
+    "defaultLocale": "en",
+    "route": "/team/łukasz-sielski",
+    "session": {
+        "ip": "127.0.0.1"
+    },
+    "post": {},
+    "query": {}
+}

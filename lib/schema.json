@@ -1,0 +1,31 @@
+{
+    "id": "/POMObject",
+    "type": "object",
+    "required": [
+        "_type"
+    ],
+    "properties": {
+        "_type": {
+            "type": "string",
+            "enum": [
+                "Block",
+                "Variant",
+                "List"
+            ]
+        },
+        "_meta": {
+            "$ref": "#/definitions/MetaMap"
+        },
+        "_props": {
+            "$ref": "#/definitions/PropertiesMap"
+        }
+    },
+    "definitions": {
+        "MetaMap": {
+            "type": "object"
+        },
+        "PropertiesMap": {
+            "type": "object"
+        }
+    }
+}

@@ -8,6 +8,8 @@ We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it do
 
 ### @for
 
+Allows iterating from `n` to `m`. Populate `$idx` field.
+
 ```dustjs
 {@for from=0 to=10}
     {$idx}
@@ -15,6 +17,8 @@ We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it do
 ```
 
 ### @has
+
+Checks if path exists and is not empty.
 
 ```dustjs
 {@has path="title"}
@@ -26,6 +30,8 @@ We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it do
 
 ### @path
 
+Creates new context from given path.
+
 ```dustjs
 {@path path="items.{$idx}"}
     {title}
@@ -33,6 +39,8 @@ We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it do
 ```
 
 ### @block
+
+Embeds block, referred content, or decorates.
 
 ```dustjs
 {@block path="items.0"/}
@@ -43,12 +51,16 @@ We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it do
 
 ### @list
 
+Populates list of blocks.
+
 ```dustjs
 {@list path="items"/}
 {@list path="items" template="_partials/as_facebook"/}
 ```
 
 ### @variant
+
+Sets best matching variant as context.
 
 ```dustjs
 {@variant path="items.1" locale="pl"}
@@ -60,6 +72,8 @@ We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it do
 
 Extendable
 
+Expose content for view / edit.
+
 ```dustjs
 {@editable path="items.1.title" editMode=edit/}
 ```
@@ -68,8 +82,26 @@ Extendable
 
 Extendable
 
+Expose media for view / edit.
+
 ```dustjs
 {@media path="items.1.image}" editMode=edit data-class="thumb"/}
+```
+
+### @attr
+
+Formatts content as html escaped string.
+
+```dustjs
+{@attr path="items.1.title" /}
+```
+
+### @base
+
+Wraps url with base.
+
+```dustjs
+{@base}any/url.html{/base}
 ```
 
 ## POM 2.0
@@ -134,7 +166,7 @@ Restricted names:
 | ---------- | ------------- | ---------------------------------------------- | -------
 | route      | string        | canonical route to resource in the system      | /blog/my-awesome-layout
 | uri        | string        | full uri as entered                            | https://example.com/de-DE/blog/my-awesome-layout
-| cannonical | string        | canonical absolute uri                         | https://example.com/blog/my-awesome-layout
+| canonical | string        | canonical absolute uri                         | https://example.com/blog/my-awesome-layout
 | locale     | string        | locale extracted from uri or session           | de-DE
 | base       | stirng        | required for ensuring links are aboslute       | https://example.com/de-DE/
 
@@ -153,7 +185,7 @@ Restricted names:
 
 | POM                                   | POM 2.0
 | ------------------------------------- | -------
-| data.route                            | _meta.cannonical
+| data.route                            | _meta.canonical
 | data.content.id                       | _meta.id
 | data.content.$uri                     | TBD
 | data.content.type                     | _type
@@ -162,7 +194,7 @@ Restricted names:
 | data.content.createdAt                | _meta.created
 | data.content.publishAt                | _meta.publish
 | data.content.props.og_title           | title
-| data.content.props.og_url             | _meta.cannonical
+| data.content.props.og_url             | _meta.canonical
 | data.content.author                   | _meta.author
 | data.content.author (editable)        | _props.author
 | data.content.template                 | _meta.template

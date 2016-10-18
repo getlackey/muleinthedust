@@ -1,0 +1,105 @@
+{
+    "_type": "Block",
+    "_meta": {
+        "canonical": "http://enigma-marketing.co.uk/team/%c5%82ukasz-sielski",
+        "id": 40,
+        "route": "/team/łukasz-sielski",
+        "created": 1461665623164,
+        "published": 1471824000000,
+        "author": {
+            "id": 3,
+            "name": "Łukasz Sielski",
+            "image": 260
+        },
+        "template": "~/core/dynamic",
+        "state": "published",
+        "stylesheets": [],
+        "javascripts": [],
+        "locale": "en",
+        "host": "https://enigma-marketing.co.uk/",
+        "env": "production",
+        "defaultLocale": "en",
+        "route": "/team/łukasz-sielski"
+    },
+    "_edit": false,
+    "_fragment": false,
+
+    "_props": {
+        "theme": "orange",
+        "custom": "",
+        "header-type": "article",
+        "header-gradient": "",
+        "header-tags-theme": "",
+        "header-figure-size": "",
+        "header-figure-x-offset": "",
+        "header-figure-y-offset": "",
+        "author": {
+            "id": 3,
+            "name": "Łukasz Sielski",
+            "image": 260
+        }
+    },
+    "_taxonomies": [{
+        "name": "team",
+        "label": "Team",
+        "type": {
+            "name": "pageType",
+            "label": "Page Type"
+        }
+    }],
+    "related": [],
+    "name": "Łukasz Sielski",
+    "title": "",
+    "headshot": {
+        "*": 193,
+        "_type": "Variants",
+        "small:*:*": 260
+    },
+    "blocks": {
+        "_type": "List",
+        "items": [{
+            "_type": "Block",
+            "image": {
+                "_type": "Variants",
+                "hero:*:*": 259
+            },
+            "excerpt": {
+                "_type": "Variants",
+                "hero:*:*": "“Do or do not, there is no try” is my life theme. Passionate about R&D, reverse engineering, early adoption and prototyping. I speak Polish, Russian and English, but can pick up German, Ukrainian or Belarusian as well. I love history and totally random facts and would play bass, sail or cycle, if only I had more time.",
+                "hero:*:pl": "“Rób, albo nie rób, nie ma próbowania” jest jego życiowym hasłem. Pasjonat R&D, odwróconej inżynierii, wczesnej adaptacji i protypowania. Pracował dla Time Inc., Nokia, Wayn.com i wielu innych. Mówi po polsku, rosyjsku i angielsku, ale podchwyci także niemiecki, ukraiński czy białoruski. Kocha historię i całkowicie losowe fakty. Gdyby miał więcej czasu grałby na base, żeglował i jeździł na rowerze. Znany także z wrzucania losowych i nieoczekiwanych odniesień do Tolkiena czy Monty Pythona."
+            },
+            "title": {
+                "_type": "Variants",
+                "hero:*:*": "Łukasz's Bio",
+                "hero:*:pl": "O Łukaszu"
+            },
+            "_meta": {
+                "template": "~/core/partials/block/media-copy-hero"
+            },
+            "_props": {
+                "theme": "orange"
+            }
+        }, {
+            "_type": "Block",
+            "text": {
+                "_type": "Variants",
+                "quote:*:*": "\" Difference between someone who keeps failing and one who \"knows better\", is that the first one can succeed at some point and the second will remain stupid. \"",
+                "quote:*:pl": "\" Różnica pomiędzy kimś kto wciąż ponosi porażki, a tego kto \"wie lepiej\" polega na tym, iż pierwszy w końcu może odnieść sukces, a drugi zawsze pozostanie głupim. \""
+            },
+            "_meta": {
+                "template": "~/core/partials/block/quote"
+            }
+        }]
+    },
+    "heading": "Łukasz Marek Sielski",
+    "subtitle": "Senior full stack developer",
+    "tags": " ",
+    "heading-image": {
+        "_type": "Variants",
+        "*:*:pl": null
+    },
+    "title": "Senior Full Stack Developer",
+    "_session": {
+        "ip": "127.0.0.1"
+    }
+}
