@@ -1,4 +1,4 @@
-# Lackey POM DustJS
+# Mule in the Dust
 
 > It's Lackey implementation for DustJS as Express renderer.
 
