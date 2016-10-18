@@ -1,0 +1,36 @@
+TOP{~n}
+{@has path="top"}
+    {.}
+{/has}
+{~n}
+ITEM INNER{~n}
+{@has path="item.inner"}
+    {.}
+{/has}
+{~n}
+ITEM IN THE LIST 4{~n}
+{@has path="item.in.the.list.0"}
+    {name}
+{:else}
+{/has}
+{~n}
+ITEM IN THE LIST 5
+{~n}
+{@has path="item.in.the.list.5"}
+    {name}
+{:else}
+    not found
+{/has}
+{~n}
+FOR
+{~n}
+{@for from=0 to=10}
+FOR {$idx}{~n}
+    {@has path="item.in.the.list.{$idx}"}
+        {$idx} {name}
+    {:else}
+        {$idx} not found
+    {/has}
+    {~n}
+{/for}
+

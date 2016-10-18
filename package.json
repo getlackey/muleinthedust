@@ -1,0 +1,51 @@
+{
+  "name": "lackey-pom-dustjs",
+  "version": "0.1.0",
+  "description": "DustJS renderer for Express",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getlackey/lackey-pom-dustjs.git"
+  },
+  "keywords": [
+    "express",
+    "render",
+    "view",
+    "layout",
+    "dustjs",
+    "dust",
+    "pom",
+    "lackey",
+    "cms"
+  ],
+  "author": "lukaszsielski@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getlackey/lackey-pom-dustjs/issues"
+  },
+  "homepage": "https://github.com/getlackey/lackey-pom-dustjs#readme",
+  "dependencies": {
+    "dustjs-helpers": "^1.7.3",
+    "dustjs-linkedin": "^2.7.4",
+    "gulp": "^3.9.1",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-eslint": "^3.0.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-mocha": "^3.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
+  }
+}

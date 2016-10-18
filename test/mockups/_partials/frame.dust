@@ -1,0 +1,7 @@
+This is my head
+
+{>"_partials/navigation/nav" nav=this.is.it/}
+
+{+body/}
+
+This is my foot

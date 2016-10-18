@@ -1,0 +1,5 @@
+{@block path="block.0"/}
+{@block path="block.1"/}
+{@block route="block2"/}
+{@block path="block.3" template="block2"/}
+
