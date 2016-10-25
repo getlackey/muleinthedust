@@ -1,0 +1,3 @@
+{@path path="item.inner"}
+    {.}
+{/path}

@@ -31,6 +31,11 @@
   },
   "homepage": "https://github.com/getlackey/lackey-pom-dustjs#readme",
   "dependencies": {
+    "bestmatch": "^1.1.0",
+    "common-dustjs-helpers": "^1.4.1",
+    "debug": "^2.2.0",
+    "dust-intl": "^1.1.1",
+    "dust-naming-convention-filters": "^0.1.0",
     "dustjs-helpers": "^1.7.3",
     "dustjs-linkedin": "^2.7.4",
     "freshy": "^1.0.2",
@@ -39,6 +44,7 @@
     "gulp-eslint": "^3.0.1",
     "gulp-istanbul": "^1.1.1",
     "gulp-mocha": "^3.0.1",
+    "lodash": "^4.16.4",
     "object-path": "^0.11.2"
   },
   "devDependencies": {

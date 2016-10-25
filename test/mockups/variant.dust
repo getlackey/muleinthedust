@@ -1,0 +1,13 @@
+name = {@variant path="name"}{.}{/variant}{~n}
+name:*:*:pl = {@variant path="name" variant="*:*:pl"}{.s}{/variant}{~n}
+name:*:*:de = {@variant path="name" variant="*:*:de"}{.}{/variant}{~n}
+item = {@variant path="item"}{.}{/variant}{~n}
+item:*:*:pl = {@variant path="item" variant="*:*:pl"}{.}{/variant}{~n}
+item:*:*:de = {@variant path="item" variant="*:*:de"}{.}{/variant}{~n}
+blocks = {@variant path="blocks"}{.}{/variant}{~n}
+blocks:*:*:pl = {@variant path="blocks" variant="*:*:pl"}{.}{/variant}{~n}
+blocks:*:*:de = {@variant path="blocks" variant="*:*:de"}{.}{/variant}{~n}
+items = {@variant path="items"}{.}{/variant}{~n}
+items:*:*:pl = {@variant path="items" variant="*:*:pl"}{.}{/variant}{~n}
+items:*:*:de = {@variant path="items" variant="*:*:de"}{.}{/variant}{~n}
+items:abc:* = {@variant path="items" variant="abc:*"}{.}{/variant}{~n}

@@ -1,0 +1,7 @@
+{@content path="name"/}
+{@content path="name" locale="de"/}
+{@variant path="name" locale="pl"/}
+{@path path="block.3"}
+    {@content path="name"/}
+{/path}
+{@block path="block.1"/}

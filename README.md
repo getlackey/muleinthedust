@@ -71,14 +71,14 @@ Sets best matching variant as context.
 {/variant}
 ```
 
-### @editable
+### @text
 
 Extendable
 
 Expose content for view / edit.
 
 ```dustjs
-{@editable path="items.1.title" editMode=edit/}
+{@text path="items.1.title" editMode=edit/}
 ```
 
 ### @media

@@ -4,19 +4,38 @@
         "inner": "it is",
         "in": {
             "the": {
-                "list": [{
-                    "name": "A"
-                        }, {
-                    "name": "B",
-                    "$idx": 1000
-                        }, {
-                    "name": "C"
-                        }, {
-                    "name": "D"
-                        }, null, {
-                    "name": "F"
-                }]
+                "list": [
+                    {
+                        "name": "A"
+                    },
+                    {
+                        "name": "B",
+                        "$idx": 1000
+                    },
+                    {
+                        "name": "C"
+                    },
+                    {
+                        "name": "D"
+                    },
+                    null,
+                    {
+                        "name": "F"
+                    }
+                ]
             }
+        }
+    },
+    "name": "Top",
+    "items": {
+        "_type": "Variants",
+        "*": 1,
+        "*:*:de": "abc",
+        "abc:*:pl": {
+            "index": 1
+        },
+        "abc": {
+            "index": 1
         }
     },
     "block": [{

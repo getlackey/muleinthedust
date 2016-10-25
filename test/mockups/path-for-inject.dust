@@ -1,0 +1,9 @@
+{@for from=0 to=10}
+FOR {$idx}{~n}
+    {@path path="item.in.the.list.{$idx}" data-$idx=$idx}
+        {$idx} {name}
+    {:else}
+        {$idx} not found
+    {/path}
+    {~n}
+{/for}

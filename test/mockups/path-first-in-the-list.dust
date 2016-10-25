@@ -1,0 +1,5 @@
+{@path path="item.in.the.list.0"}
+    {name}
+{:else}
+    not found
+{/path}
