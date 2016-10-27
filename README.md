@@ -7,6 +7,36 @@
 
 We used to use [adaro](https://github.com/krakenjs/adaro). Anyhow we found it doesn't fully match our case. We decided to develop our own solution.
 
+## Install
+
+```
+npm i --save muleinthedust
+```
+
+## Usage
+
+```javascript
+let
+    app = require('express')(),
+    dust = require('muleinthedust')({
+        root: ...
+        onRoute: ...
+        ...
+    });
+
+app.engine('dust', dust);
+app.set('view engine', 'dust');
+```
+
+Options
+
+Options | Type | Required | Note
+------- | ---- | -------- | ----
+route   | string | Yes | state absolute path to templates directory
+onRoute | `(string) => Promise<object>` | Tes (for `@block`) | route mapping function
+onLoad |  `(templateName, options, callback) => void` | No | template loading function
+
+
 ## Helpers
 
 ### @for
@@ -18,6 +48,17 @@ Allows iterating from `n` to `m`. Populate `$idx` field.
     {$idx}
 {/for}
 ```
+
+Param        | Type    | Required | Note
+------------ | ------- | -------- | ----
+from         | Number  | Yes      | first number to iterate from
+to           | Number  | Yes      | last number to iterate to
+
+Blocks
+
+ * body
+
+Status: Tested
 
 ### @has
 
@@ -31,6 +72,17 @@ Checks if path exists and is not empty.
 {/has}
 ```
 
+Param        | Type    | Required | Note
+------------ | ------- | -------- | ----
+path         | string  | Yes      | see [@path](#path)
+
+Blocks
+
+ * body
+ * else
+
+Status: Tested
+
 ### @path
 
 Creates new context from given path.
@@ -40,6 +92,35 @@ Creates new context from given path.
     {title}
 {/path}
 ```
+
+Param        | Type    | Required | Note
+------------ | ------- | -------- | ----
+path         | string  | Yes      | define path from current context downwards, supports variables
+data-*       | any     | No       | attributes to pass into new context
+
+Blocks
+
+ * body
+ * else
+
+Dynamic example
+
+```dustjs
+{@path path="item.in.the.list.{$idx}"}
+{/path}
+
+```
+
+Passing data example
+
+```dustjs
+{@path path="item.in.the.list.{$idx}" data-$idx=$idx}
+    {$idx}
+{/path}
+
+```
+
+Status: Tested
 
 ### @block
 
@@ -52,6 +133,20 @@ Embeds block, referred content, or decorates.
 {@block route="/referred/page" template="_partials/as_facebook"/}
 ```
 
+Param        | Type    | Required | Note
+------------ | ------- | -------- | ----
+route        | string  | Yes      | define path from current context downwards, supports variables
+template     | any     | No       | attributes to pass into new context
+
+Blocks
+
+ * body
+ * else
+
+Require implementing `onRoute(route) => Promise<Object>`.
+
+Status: Tested
+
 ### @list
 
 Populates list of blocks.
@@ -63,10 +158,12 @@ Populates list of blocks.
 
 ### @variant
 
+Extendable
+
 Sets best matching variant as context.
 
 ```dustjs
-{@variant path="items.1" locale="pl"}
+{@variant path="items.1" variant="pl"}
     {title}
 {/variant}
 ```
@@ -92,6 +189,8 @@ Expose media for view / edit.
 ```
 
 ### @attr
+
+Extendable
 
 Formatts content as html escaped string.
 
