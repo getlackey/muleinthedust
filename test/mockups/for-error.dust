@@ -1,0 +1,1 @@
+{@for from=3 to=5}{@throw/}{/for}

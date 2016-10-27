@@ -27,21 +27,38 @@ function resultMockup(name) {
 
 describe('Helpers', () => {
 
-    it('@for', done => {
-        instance('for', {
-            A: 'King Kong'
-        }, (error, result) => {
-            if (error) {
-                return done(error);
-            }
-            try {
-                result.should.be.String;
-                result.replace(/^\s+|\s+$/g, '').should.be.eql('3 - King Kong4 - King Kong5 - King Kong');
-                done();
-            } catch (err) {
-                done(err);
-            }
+    describe('@for', () => {
+        it('@for', done => {
+            instance('for', {
+                A: 'King Kong'
+            }, (error, result) => {
+                if (error) {
+                    return done(error);
+                }
+                try {
+                    result.should.be.String;
+                    result.replace(/^\s+|\s+$/g, '').should.be.eql('3 - King Kong4 - King Kong5 - King Kong');
+                    done();
+                } catch (err) {
+                    done(err);
+                }
 
+            });
+        });
+
+        it('@for with syntax', done => {
+            instance('for-error', {
+                A: 'King Kong'
+            }, (error, result) => {
+                try {
+                    should.not.exist(error);
+                    result.should.be.eql('');
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+
+            });
         });
     });
 

@@ -1,1 +1,2 @@
 {@for from=3 to=5}{$idx} - {A}{/for}
+{@for from=4 to=1}{$idx} - {A}{/for}

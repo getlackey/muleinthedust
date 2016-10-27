@@ -46,4 +46,46 @@ describe('Renderer', () => {
         });
     });
 
+    describe('Errors', () => {
+
+        it('ENEONT', done => {
+            instance('404', null, (error, result) => {
+                try {
+                    should.exist(error);
+                    error.code.should.be.eql('ENOENT');
+                    should.not.exist(result);
+                    done();
+                } catch (ex) {
+                    done(ex);
+                }
+            });
+        });
+
+        it('No templat name', done => {
+            instance(null, null, (error, result) => {
+                try {
+                    should.exist(error);
+                    console.log(error);
+                    //error.should.be.instanceOf(SyntaxError);
+                    should.not.exist(result);
+                    done();
+                } catch (ex) {
+                    done(ex);
+                }
+            });
+        });
+
+        it('Render with syntax error', done => {
+            instance('invalid', null, (error, result) => {
+                try {
+                    should.exist(error);
+                    error.should.be.instanceOf(SyntaxError);
+                    should.not.exist(result);
+                    done();
+                } catch (ex) {
+                    done(ex);
+                }
+            });
+        });
+    });
 });
