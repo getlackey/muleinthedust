@@ -5,18 +5,21 @@ const
     should = require('should'),
     library = require('../lib'),
     fs = require('fs'),
+    ctx = require('./context.json');
+
+let
     instance = library({
         root: __dirname + '/mockups',
-        onRoute: (route) => Promise.resolve({
-            path: route,
-            name: route + ' name',
-            data: {
-                a: '123123'
-            },
-            template: 'block2'
-        })
-    }),
-    ctx = require('./context.json');
+    });
+
+instance.resolvers.route = (route) => Promise.resolve({
+    path: route,
+    name: route + ' name',
+    data: {
+        a: '123123'
+    },
+    template: 'block2'
+});
 
 function resultMockup(name) {
     return fs.readFileSync(__dirname + '/mockups/' + name + '.test.html', 'utf8').replace(/^\s+|\s+$/g, '');

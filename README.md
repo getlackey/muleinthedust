@@ -20,7 +20,6 @@ let
     app = require('express')(),
     dust = require('muleinthedust')({
         root: ...
-        onRoute: ...
         ...
     });
 
@@ -32,10 +31,8 @@ Options
 
 Options | Type | Required | Note
 ------- | ---- | -------- | ----
-route   | string | Yes | state absolute path to templates directory
-onRoute | `(string) => Promise<object>` | Tes (for `@block`) | route mapping function
 onLoad |  `(templateName, options, callback) => void` | No | template loading function
-
+root   | string | Yes | state absolute path to templates directory
 
 ## Helpers
 
@@ -143,9 +140,23 @@ Blocks
  * body
  * else
 
-Require implementing `onRoute(route) => Promise<Object>`.
+Require implementing `route` resolver
 
-Status: Tested
+```javascript
+let
+    app = require('express')(),
+    dust = require('muleinthedust')({
+        root: ...
+        ...
+    });
+
+dust.resolvers.route = route => Promise.resolve(<CONTENT>);
+
+app.engine('dust', dust);
+app.set('view engine', 'dust');
+```
+
+Status: Tested, without extending
 
 ### @list
 
@@ -165,17 +176,28 @@ Blocks
  * body
  * else
 
+Status: Tested
+
 ### @variant
 
 Extendable
 
 Sets best matching variant as context.
 
+
+Param        | Type    | Required | Note
+------------ | ------- | -------- | ----
+path         | string  | Yes      | define path from current context downwards, supports variables
+variant      | string  | Yes      | variant platform as for [bestmatch](https://github.com/sielay/bestmatch)
+
+
 ```dustjs
 {@variant path="items.1" variant="pl"}
     {title}
 {/variant}
 ```
+
+Status: Tested, without extending
 
 ### @text
 
