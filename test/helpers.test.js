@@ -124,6 +124,21 @@ describe('Helpers', () => {
         });
     });
 
+    it('@list', done => {
+        instance('list', ctx, (error, result) => {
+            if (error) {
+                return done(error);
+            }
+            try {
+                result.should.be.String;
+                result.replace(/^\s+|\s+$/g, '').should.be.eql(resultMockup('list'));
+                done();
+            } catch (err) {
+                done(err);
+            }
+        });
+    });
+
     it('@variant', done => {
         instance('variant', ctx, (error, result) => {
             if (error) {
@@ -131,7 +146,7 @@ describe('Helpers', () => {
             }
             try {
                 result.should.be.String;
-                result.replace(/^\s+|\s+$/g, '').replace(/\s+\n/g,'\n').should.be.eql(resultMockup('variant'));
+                result.replace(/^\s+|\s+$/g, '').replace(/\s+\n/g, '\n').should.be.eql(resultMockup('variant'));
                 done();
             } catch (err) {
                 done(err);

@@ -135,7 +135,7 @@ Embeds block, referred content, or decorates.
 
 Param        | Type    | Required | Note
 ------------ | ------- | -------- | ----
-route        | string  | Yes      | define path from current context downwards, supports variables
+route        | string  | Yes      | d
 template     | any     | No       | attributes to pass into new context
 
 Blocks
@@ -151,10 +151,19 @@ Status: Tested
 
 Populates list of blocks.
 
+Param        | Type    | Required | Note
+------------ | ------- | -------- | ----
+path         | string  | Yes      | define path from current context downwards, supports variables
+
 ```dustjs
 {@list path="items"/}
 {@list path="items" template="_partials/as_facebook"/}
 ```
+
+Blocks
+
+ * body
+ * else
 
 ### @variant
 
@@ -232,16 +241,16 @@ _props:
     theme: red
 title: My awesome layout
 blocks:
-    type: List
+    _type: List
     items:
         -
-            type: Block
+            _type: Block
             _props:
                 theme: blue
             copy: |
                 My awesome layout is more awesome than you are
             example:
-                type: Variant
+                _type: Variant
                 *: Example
                 *:*:pl: Przykład
 ```

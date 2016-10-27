@@ -1,0 +1,16 @@
+_type: Block
+_meta:
+    route: /
+    created: 1476784049
+    updated: 1476784049
+    template: index
+_props:
+    theme: blue
+title: Mule in The Dust
+blocks:
+    _type: List
+    items:
+        -
+            _type: Block
+            _meta:
+                template: partials/header
