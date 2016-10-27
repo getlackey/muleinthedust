@@ -10,8 +10,8 @@
     "test": "npm test"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/getlackey/lackey-pom-dustjs.git"
+    "url": "git+https://github.com/getlackey/lackey-pom-dustjs.git",
+    "type": "git"
   },
   "keywords": [
     "express",
