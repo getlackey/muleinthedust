@@ -111,7 +111,50 @@ describe('Helpers', () => {
                 }
             });
         }));
+
+        it('Handle errors in blockRender', done => {
+            instance('path-error', ctx, (error, result) => {
+                try {
+                    should.not.exist(error);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+        });
+
+        it('Path resolver', done => {
+
+            let instance2 = library({
+                pathResolver: path => {
+                    return Promise.resolve(__dirname + '/mockups/' + path + '.dust');
+                }
+            });
+
+            instance2('path-error', ctx, (error, result) => {
+                try {
+                    console.log(error);
+                    should.not.exist(error);
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+        });
     });
+
+    it('typeof filter', done => instance('typeof', ctx, (error, result) => {
+        if (error) {
+            return done(error);
+        }
+        try {
+            result.should.be.String;
+            result.replace(/\s+/g, '').should.be.eql(resultMockup('typeof'));
+            done();
+        } catch (err) {
+            done(err);
+        }
+    }));
 
 
     it('@has', done => {
@@ -129,20 +172,46 @@ describe('Helpers', () => {
         });
     });
 
-    it('@block', done => {
-        instance('block', ctx, (error, result) => {
-            if (error) {
-                return done(error);
-            }
-            try {
-                result.should.be.String;
-                result.replace(/^\s+|\s+$/g, '').should.be.eql(resultMockup('block'));
-                done();
-            } catch (err) {
-                done(err);
-            }
+    describe('@block', () => {
+
+        it('works', done => {
+            instance('block', ctx, (error, result) => {
+                if (error) {
+                    return done(error);
+                }
+                try {
+                    result.should.be.String;
+                    result.replace(/^\s+|\s+$/g, '').should.be.eql(resultMockup('block'));
+                    done();
+                } catch (err) {
+                    done(err);
+                }
+            });
+        });
+
+        it('handle error #1', done => {
+
+            let old = instance.resolvers.route;
+            instance.resolvers.route = null;
+
+            instance('block', ctx, (error, result) => {
+                if (error) {
+                    return done(error);
+                }
+                try {
+                    result.should.be.String;
+                    result.replace(/^\s+|\s+$/g, '').should.be.eql(resultMockup('block-error'));
+                    done();
+                } catch (err) {
+                    done(err);
+                } finally {
+                    instance.resolvers.route = old;
+                }
+            });
         });
     });
+
+
 
     it('@list', done => {
         instance('list', ctx, (error, result) => {

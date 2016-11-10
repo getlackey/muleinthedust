@@ -1,9 +1,9 @@
 List 1{~n}
 {@list path="block"/}
 List 2{~n}
-{!@list path="block1"/!}
+{@list path="block1"/}
 List 3{~n}
-{!@list path="block1"}
-    {!:else!}
+{@list path="block1"}
+    {:else}
         Nothing found
-{!/list!}
+{/list}

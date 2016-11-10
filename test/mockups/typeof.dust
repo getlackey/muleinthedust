@@ -1,0 +1,10 @@
+string={top|typeOf}{~n}
+object={item|typeOf}{~n}
+string={item.inner|typeOf}{~n}
+object={item.in|typeOf}{~n}
+object={item.in.the|typeOf}{~n}
+array={item.in.the.list|typeOf}{~n}
+undefined={abc|typeOf}{~n}
+number={1|typeOf}{~n}
+null={gg|typeOf}{~n}
+boolean={ff|typeOf}{~n}

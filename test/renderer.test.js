@@ -61,12 +61,10 @@ describe('Renderer', () => {
             });
         });
 
-        it('No templat name', done => {
+        it('No template name', done => {
             instance(null, null, (error, result) => {
                 try {
                     should.exist(error);
-                    console.log(error);
-                    //error.should.be.instanceOf(SyntaxError);
                     should.not.exist(result);
                     done();
                 } catch (ex) {
