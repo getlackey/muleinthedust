@@ -243,8 +243,8 @@ describe('Helpers', () => {
         });
     });
 
-    /*it('@content', done => {
-        instance('content', ctx, (error, result) => {
+    it('@attr', done => {
+        instance('attr', ctx, (error, result) => {
             if (error) {
                 return done(error);
             }
@@ -257,5 +257,5 @@ describe('Helpers', () => {
                 done(err);
             }
         });
-    });*/
+    });
 });
